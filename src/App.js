@@ -1,4 +1,4 @@
-import react from "react";
+// import react from "react";
 import AttendancePage from "./views/AttendancePage";
 function App() {
   return (
