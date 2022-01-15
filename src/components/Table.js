@@ -4,7 +4,7 @@ import axios from "axios";
 export default function TableHead({subject}) {
   const getData = async () => {
     let response = await axios
-      .get("https://sheet.best/api/sheets/07267619-a2a7-419b-a762-4506687e5e0a")
+      .get("https://sheetsu.com/apis/v1.0su/4813c0d57156")
       .then((response) => response.data);
     setData(response);
   };
@@ -32,6 +32,9 @@ export default function TableHead({subject}) {
           </th>
           <th className="p-2 whitespace-nowrap">
             <div className="font-semibold text-left">Roll Number</div>
+          </th>
+          <th className="p-2 whitespace-nowrap">
+            <div className="font-semibold text-left"></div>
           </th>
         </tr>
       </thead>
