@@ -12,10 +12,11 @@ export default function TableBody({ name, rollno, subject }) {
   const sent = () => {
     setData({ [`${subject}`]: "P", date });
   };
-  useEffect(async () => {
-   await sendData();
+  useEffect(() => {
+    if (data) {
+      sendData();
+    }
   }, [data]);
-
   const sendData = async () => {
     // await axios.patch(
     //      `https://sheet.best/api/sheets/c2458b14-6421-4a03-912a-b8032a49be0c/rollno/${rollno}`,
