@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 
-export default function TableBody({ name, rollno, subject }) {
-  var dateObj = new Date();
-  var month = dateObj.getUTCMonth() + 1; //months from 1-12
-  var day = dateObj.getUTCDate();
-  var year = dateObj.getUTCFullYear();
-  let date = day + "/" + month + "/" + year;
+export default function TableBody({ name, rollno, subject ,date}) {
+  // var dateObj = new Date();
+  // var month = dateObj.getUTCMonth() + 1; //months from 1-12
+  // var day = dateObj.getUTCDate();
+  // var year = dateObj.getUTCFullYear();
+  // let date = day + "/" + month + "/" + year;
 
-  const [data, setData] = useState();
+  const [data, setData] = useState(); 
   const sent = () => {
     setData({ [`${subject}`]: "P", date });
   };
@@ -18,10 +18,10 @@ export default function TableBody({ name, rollno, subject }) {
     }
   }, [data]);
   const sendData = async () => {
-    // await axios.patch(
-    //      `https://sheet.best/api/sheets/c2458b14-6421-4a03-912a-b8032a49be0c/rollno/${rollno}`,
-    //      data
-    //    );
+    await axios.patch(
+         `https://sheet.best/api/sheets/c2458b14-6421-4a03-912a-b8032a49be0c/rollno/${rollno}`,
+         data
+       );
     console.log(data);
   };
   return (

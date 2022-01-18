@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TableBody from "./TableBody";
 import axios from "axios";
-export default function TableHead({subject}) {
+export default function TableHead({subject,date}) {
   const getData = async () => {
     let response = await axios
       .get("https://sheetsu.com/apis/v1.0su/4813c0d57156")
@@ -20,6 +20,7 @@ export default function TableHead({subject}) {
         name={student.name}
         rollno={student.rollno}
         subject={subject}
+        date={date}
       />
     );
   });
